@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da918972-55da-4861-944d-c136e8140dca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/example/src/components/ImportedComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/src/components/NewComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/vue.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example" beforeDir="false" afterPath="$PROJECT_DIR$/example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/components/HelloWorld.vue" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/components/HelloWorld.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vue-magic-imports.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +75,7 @@
       <workItem from="1607217631307" duration="1240000" />
       <workItem from="1607300286621" duration="119000" />
       <workItem from="1607300438124" duration="22240000" />
-      <workItem from="1607382117805" duration="10482000" />
+      <workItem from="1607382117805" duration="10741000" />
     </task>
     <servers />
   </component>
