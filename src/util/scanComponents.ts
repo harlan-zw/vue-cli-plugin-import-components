@@ -85,8 +85,6 @@ export async function scanComponents (dirs: ScanDir[], srcDir: string): Promise<
         import: _import
       }
 
-      // Check if component is already defined
-      const definedComponent = components.find(c => c.pascalName === component.pascalName)
       components.push(component)
     }
 

@@ -37,8 +37,7 @@
     "@vue/compiler-sfc": "^3.0.4",
     "debug": "^4.3.1",
     "fast-glob": "^3.2.4",
-    "minimatch": "^3.0.4",
-    "vue-template-compiler": "^2.6.12"
+    "minimatch": "^3.0.4"
   },
   "peerDependencies": {
     "@vue/cli-service": "^3.0.0 || ^4.0.0-0"

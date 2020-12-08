@@ -1,9 +1,10 @@
 import { ProjectOptions } from "@vue/cli-service"
 import { TemplateCompileResult } from "@vue/component-compiler-utils"
-import * as Path from 'path'
+import { SFCTemplateCompileResults } from '@vue/compiler-sfc'
 
 export interface PluginOptions {
   path: string
+  extractor: any
   extensions?: Array<string>
   pattern?: string
   ignore?: string
@@ -16,7 +17,15 @@ export interface VueCliPluginComponentsOptions extends ProjectOptions {
 }
 
 export interface TemplateCompileResultWithMeta extends TemplateCompileResult {
-  tags: Set<string>
+  meta: {
+    tags: Set<string>
+  }
+}
+
+export interface SFCTemplateCompileResultsWithMeta extends SFCTemplateCompileResults {
+  meta: {
+    tags: Set<string>
+  }
 }
 
 export interface ScanDir {

@@ -1,11 +1,10 @@
 import { loader } from 'webpack';
 import Debug from 'debug'
-import { parseSfcComponent, compileTemplateFromDescriptor } from './util'
 import { getOptions } from 'loader-utils';
 import { scanComponents } from './util/scanComponents'
 import { PluginOptions, ScanDir, Component } from './types'
 import { join, dirname } from 'path'
-import { map, filter, first } from 'lodash'
+import { filter, first } from 'lodash'
 
 const debug = Debug('vue-cli-plugin-components:loader')
 
@@ -22,9 +21,9 @@ export default async function loader (this : loader.LoaderContext, source: strin
         return source
     }
 
-    console.log(this.resourcePath, this.rootContext, this.context)
-
     const options = getOptions(loaderContext) as unknown as PluginOptions;
+
+    console.log(options)
 
     const extensions = ['vue', 'js']
 
@@ -43,14 +42,13 @@ export default async function loader (this : loader.LoaderContext, source: strin
         }
     ] as ScanDir[], this.context)
 
-    // parse the SFC component and get a descriptor
-    const sfcDescriptor = parseSfcComponent.call(this)
 
-    // compile the template content from the descriptor
-    const { tags } = compileTemplateFromDescriptor.call(this, sfcDescriptor)
+    const tags = options.extractor.call(this) as Array<string> | undefined
+
+    console.log(tags)
 
     // we only need to match the tags if we have some
-    if (tags.size <= 0) {
+    if (!tags || tags.length <= 0) {
         return source
     }
 
@@ -67,6 +65,8 @@ export default async function loader (this : loader.LoaderContext, source: strin
             components.push(component)
         }
     })
+
+    console.log(components)
 
     // only if we have components to inject
     if (components.length <= 0) {
