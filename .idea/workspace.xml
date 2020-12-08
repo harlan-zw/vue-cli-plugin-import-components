@@ -2,53 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da918972-55da-4861-944d-c136e8140dca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/example/src/components/ImportedComponent.vue" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/example/src/components/NewComponent.vue" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/example/vue.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/loader.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/compileTemplateFromDescriptor.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/parseSfcComponent.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/scanComponents.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example" beforeDir="false" afterPath="$PROJECT_DIR$/example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/src/components/HelloWorld.vue" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/components/HelloWorld.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inspo/nuxt-components/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/nuxt-components/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inspo/nuxt-components/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/nuxt-components/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inspo/nuxt-components/test/fixture/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/nuxt-components/test/fixture/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/docs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/docs/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/docs/migrating.md" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/docs/migrating.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/docs/ru/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/docs/ru/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/docs/ru/migrating.md" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/docs/ru/migrating.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/docs/ru/spec.md" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/docs/ru/spec.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/docs/spec.md" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/docs/spec.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/docs/zh/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/docs/zh/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/docs/zh/migrating.md" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/docs/zh/migrating.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/docs/zh/spec.md" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/docs/zh/spec.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/duplicate-cssm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/duplicate-cssm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/resolve.vue" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/resolve.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/script-import.vue" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/script-import.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/ssr-style.vue" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/ssr-style.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/style-import-twice-sub.vue" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/style-import-twice-sub.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/style-import-twice.vue" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/style-import-twice.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/style-import.vue" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/style-import.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/template-import-pre.vue" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/template-import-pre.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/template-import.vue" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/template-import.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/transform.vue" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/transform.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/ts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/ts.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inspo/vuetify-loader/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vuetify-loader/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inspo/vuetify-loader/dev/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vuetify-loader/dev/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +80,7 @@
       <workItem from="1607217631307" duration="1240000" />
       <workItem from="1607300286621" duration="119000" />
       <workItem from="1607300438124" duration="22240000" />
-      <workItem from="1607382117805" duration="10278000" />
+      <workItem from="1607382117805" duration="10482000" />
     </task>
     <servers />
   </component>
