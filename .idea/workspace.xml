@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="da918972-55da-4861-944d-c136e8140dca" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/src/components/ImportedComponent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/src/components/NewComponent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/vue.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/loader.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/compileTemplateFromDescriptor.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/parseSfcComponent.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/scanComponents.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/components/HelloWorld.vue" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/components/HelloWorld.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspo/nuxt-components/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/nuxt-components/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspo/nuxt-components/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/nuxt-components/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspo/nuxt-components/test/fixture/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/nuxt-components/test/fixture/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/docs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/docs/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/docs/migrating.md" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/docs/migrating.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/docs/ru/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/docs/ru/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/docs/ru/migrating.md" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/docs/ru/migrating.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/docs/ru/spec.md" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/docs/ru/spec.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/docs/spec.md" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/docs/spec.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/docs/zh/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/docs/zh/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/docs/zh/migrating.md" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/docs/zh/migrating.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/docs/zh/spec.md" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/docs/zh/spec.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/duplicate-cssm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/duplicate-cssm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/resolve.vue" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/resolve.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/script-import.vue" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/script-import.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/ssr-style.vue" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/ssr-style.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/style-import-twice-sub.vue" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/style-import-twice-sub.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/style-import-twice.vue" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/style-import-twice.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/style-import.vue" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/style-import.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/template-import-pre.vue" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/template-import-pre.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/template-import.vue" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/template-import.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/transform.vue" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/transform.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/ts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/test/fixtures/ts.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspo/vue-loader/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vue-loader/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspo/vuetify-loader/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vuetify-loader/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspo/vuetify-loader/dev/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/inspo/vuetify-loader/dev/webpack.config.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1lDu83sUgCdSd86dMs4hzvw4uhZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/util" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/util" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/lib" />
+      <recent name="$PROJECT_DIR$/generator/template/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/inspo" />
+      <recent name="$PROJECT_DIR$/lib" />
+      <recent name="$PROJECT_DIR$/lib/loaders" />
+      <recent name="$PROJECT_DIR$/generator/template/src" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="da918972-55da-4861-944d-c136e8140dca" name="Default Changelist" comment="" />
+      <created>1607143820095</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607143820095</updated>
+      <workItem from="1607143821256" duration="14797000" />
+      <workItem from="1607216664230" duration="908000" />
+      <workItem from="1607217631307" duration="1240000" />
+      <workItem from="1607300286621" duration="119000" />
+      <workItem from="1607300438124" duration="22240000" />
+      <workItem from="1607382117805" duration="10278000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
