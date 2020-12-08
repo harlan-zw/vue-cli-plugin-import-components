@@ -2,6 +2,12 @@
 
 > Plugin to scan and auto import components for Vue CLI - Vue 3
 
+---
+
+:fire: Note this is still an experimental build. Use with caution.
+
+---
+
 ## Table of Contents
 
 - [Features](#features)
