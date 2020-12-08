@@ -1,17 +1,18 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "strict": true,
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "outDir": "dist",
     "declaration": true,
-    "outDir": "../dist",
-    "declarationDir": "../dist",
-    "declarationMap": true,
-    "sourceMap": true
-  }
+    "esModuleInterop": true,
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "stripInternal": true,
+    "noUnusedLocals": true
+  },
+  "include": [
+    "src"
+  ]
 }

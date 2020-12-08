@@ -1,4 +1,4 @@
-import { loader } from "webpack"
+import { loader } from 'webpack'
 import { parse, SFCDescriptor } from "@vue/component-compiler-utils"
 import { ParseOptions } from "@vue/component-compiler-utils/lib/parse"
 import { VueTemplateCompiler } from "@vue/component-compiler-utils/dist/types"

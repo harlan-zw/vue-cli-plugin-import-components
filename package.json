@@ -1,59 +1,54 @@
 {
   "name": "@loonpwn/vue-cli-plugin-components",
-  "version": "1.0.0",
-  "description": "pwa plugin for vue-cli",
+  "version": "0.1.0",
+  "description": "Automatically import all of your components in Vue-CLI Vue 3 app",
   "main": "index.js",
   "types": "dist",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuejs/vue-cli.git",
-    "directory": "packages/@vue/cli-plugin-pwa"
+    "url": "git+https://github.com/loonpwn/vue-cli-plugin-components.git"
   },
   "keywords": [
     "vue",
     "cli",
-    "pwa"
+    "components",
+    "import",
+    "automatic"
   ],
   "scripts": {
     "build": "yarn clean && bili src/index.ts,src/loader.ts",
     "clean": "rimraf dist",
     "dev": "nuxt-ts test/fixture",
-    "lint": "eslint --ext .ts,.js,.vue ",
     "release": "yarn test && yarn build && standard-version && git push --follow-tags && npm publish",
     "test": "yarn lint && jest --verbose"
   },
-  "author": "Evan You",
+  "author": "Harlan Wilton",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vuejs/vue-cli/issues"
+    "url": "https://github.com/loonpwn/vue-cli-plugin-components/issues"
   },
-  "homepage": "https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli-plugin-pwa#readme",
+  "homepage": "https://github.com/loonpwn/vue-cli-plugin-components",
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {
-    "@vue/cli-service": "^4.5.9",
-    "@vue/cli-shared-utils": "^4.5.8",
-    "@vue/compiler-sfc": "^3.0.4",
-    "debug": "^4.3.1",
-    "fast-glob": "^3.2.4",
-    "minimatch": "^3.0.4"
-  },
   "peerDependencies": {
-    "@vue/cli-service": "^3.0.0 || ^4.0.0-0"
+    "@vue/cli-service": "^3.0.0 || ^4.0.0-0",
+    "@vue/compiler-sfc": "^3.0.4"
   },
   "devDependencies": {
+    "@vue/compiler-sfc": "^3.0.4",
+    "@vue/cli-service": "^4.0.0-0",
     "@types/debug": "^4.1.5",
     "@types/loader-utils": "^2.0.1",
     "@types/lodash": "^4.14.165",
     "@types/node": "*",
     "@types/webpack": "^4.4.30",
     "bili": "^5.0.5",
+    "jest": "^26.6.3",
     "loader-utils": "^2.0.0",
     "lodash": "^4.17.20",
     "rollup-plugin-typescript2": "^0.29.0",
     "typescript": "^4.1.2",
-    "webpack": "^4.5.0",
-    "webpack-cli": "^3.1.1"
+    "webpack": "^4.5.0"
   }
 }
