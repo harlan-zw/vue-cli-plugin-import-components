@@ -1,6 +1,8 @@
-# @loonpwn/vue-cli-plugin-components
+![](https://laravel-og.beyondco.de/Components.png?theme=light&packageManager=yarn+add&packageName=%40loonpwn%2Fvue-cli-plugin-components&pattern=texture&style=style_1&description=Automatically+import+components+in+Vue+CLI.&md=1&showWatermark=0&fontSize=100px&images=collection)
 
-> Plugin to scan and auto import components for Vue CLI - Vue 3
+# vue-cli-plugin-components
+
+Plugin to scan and automatically import components for Vue CLI.
 
 ---
 
