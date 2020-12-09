@@ -1,5 +1,4 @@
 import { ProjectOptions } from "@vue/cli-service"
-import { TemplateCompileResult } from "@vue/component-compiler-utils"
 
 export interface PluginOptions {
   path: string
@@ -12,12 +11,6 @@ export interface PluginOptions {
 export interface VueCliPluginComponentsOptions extends ProjectOptions {
   pluginOptions?: {
     components?: PluginOptions
-  }
-}
-
-export interface TemplateCompileResultWithMeta extends TemplateCompileResult {
-  meta: {
-    tags: Set<string>
   }
 }
 

@@ -8,7 +8,8 @@ const plugin : ServicePlugin = async (api: PluginAPI, options: VueCliPluginCompo
     //default configuration
     {
       path: api.resolve('./src/components'),
-      extractor: extractTagsFromSfc //api.version === '3' ? require('vue3/extractTagsFromSfc') : require('vue2/extractTagsFromSfc')
+      // @todo support vue2 by swapping out the extractor
+      extractor: extractTagsFromSfc
     },
     // users provided configuration
     options.pluginOptions?.components
@@ -16,6 +17,7 @@ const plugin : ServicePlugin = async (api: PluginAPI, options: VueCliPluginCompo
 
   // extend the base webpack configuration
   api.chainWebpack(webpackConfig => {
+    // @todo use oneOf so we're not running the loader when it's not required?
     webpackConfig.module
       .rules
       .get('vue')

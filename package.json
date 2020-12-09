@@ -27,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/loonpwn/vue-cli-plugin-components/issues"
   },
-  "homepage": "https://github.com/loonpwn/vue-cli-plugin-components",
+  "homepage": "https://github.com/loonpwn/vue-cli-plugin-components#readme",
   "publishConfig": {
     "access": "public"
   },
