@@ -2,7 +2,7 @@
 
 <h2 align='center'><samp>vue-cli-plugin-components</samp></h2>
 
-<p align='center'>A Vue CLI Plugin to automatically import all of your components.</p>
+<p align='center'>A Vue CLI Plugin to automagically import your components.</p>
 
 
 ---
@@ -15,10 +15,10 @@
 
 ## Features
 
-:mage: Automatically import components as you need them
-:wrench: Easily customisable to your project
-:fire: Hot Module Reloading Supported
-:triangular_ruler: Written for stability with typescript and unit tests
+- :mage: Automatically import components as you need them
+- :wrench: Easily customisable to your project
+- :fire: Hot Module Reloading Supported
+- :triangular_ruler: Written for stability with typescript and unit tests
 
 ## Setup
 
