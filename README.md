@@ -9,6 +9,8 @@
 
 :construction_worker: Note this is still an experimental build. Use with caution.
 
+**Note:** The package only works with Vue 3 for now.
+
 ---
 
 ## Features
@@ -51,27 +53,14 @@ from your script file.
 
 ## Configuration
 
-Out of the box the plugin is configured to read all `.vue, .js, .ts` files from the `~/components` folder.
-
-To customise the default behavior either use the Vue UI or manually add to your `vue.config.js`
+You can change the behaviour of the plugin by modifying the options in `./vue.config.js`. 
 
 ```js
 // vue.config.js
 module.exports = {
   pluginOptions: {
     components: {
-      paths: [
-        // paths
-        {
-          path: '~/components',
-          extensions: [ '.vue' ],
-          filter: component => true,
-        },
-        {
-          path: '~/theme/components',
-          extensions: ['.js', '.vue']
-        },
-      ]
+      ...
     }
   }
 }
@@ -79,30 +68,32 @@ module.exports = {
 
 ### Options
 
-Either install the package with the Vue CLI or use the gui.
+#### path
 
-`vue add @loonpwn/vue-cli-plugin-components`
+The path used for scanning to find components.
 
-**Note:** The package only works with Vue 3 for now.
+Default: `~/components`
 
-**Create your components:**
+#### extensions
 
-```bash
-| components/
----| ComponentFoo.vue
----| ComponentBar.vue
+Default: `['.js', '.vue', '.ts']`
+
+#### filter
+
+A function which you can use to filter out paths you don't want to be scanned.
+
+```js
+// vue.config.js
+module.exports = {
+  pluginOptions: {
+    components: {
+      filter (path) {
+        return path.match(/regex/)
+      }
+    }
+  }
+}
 ```
-
-**Use them whenever you want, they will be auto imported in `.vue` files :**
-
-```html
-<template>
-  <ComponentFoo />
-  <component-bar />
-</template>
-```
-
-No need anymore to manually import them in the `script` section!
 
 
 ### Limitations
