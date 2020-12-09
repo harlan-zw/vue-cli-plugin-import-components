@@ -1,6 +1,5 @@
 import { ProjectOptions } from "@vue/cli-service"
 import { TemplateCompileResult } from "@vue/component-compiler-utils"
-import { SFCTemplateCompileResults } from '@vue/compiler-sfc'
 
 export interface PluginOptions {
   path: string
@@ -17,12 +16,6 @@ export interface VueCliPluginComponentsOptions extends ProjectOptions {
 }
 
 export interface TemplateCompileResultWithMeta extends TemplateCompileResult {
-  meta: {
-    tags: Set<string>
-  }
-}
-
-export interface SFCTemplateCompileResultsWithMeta extends SFCTemplateCompileResults {
   meta: {
     tags: Set<string>
   }
