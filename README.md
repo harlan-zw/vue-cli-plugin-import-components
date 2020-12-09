@@ -15,7 +15,7 @@
 
 ## Features
 
-- :mage: Automatically import components as you need them
+- :mage: Automatically import components as you need them 
 - :wrench: Easily customisable to your project
 - :fire: Hot Module Reloading Supported
 - :triangular_ruler: Written for stability with typescript and unit tests
@@ -121,6 +121,13 @@ It is assumed you are using the Vue conventions for naming your components. The 
 
 It would create a conflict with two components called `Foo.vue`. You should name your component files with the namespace.
 i.e `NamespaceFoo.vue`.
+
+**Javascript Components**
+
+You may need to refresh your browser when you are updating them. The hot module reloading 
+seems to be a little buggy sometimes.
+
+It's recommended that you stick with `.vue` SFC components.
 
 ## License
 
