@@ -7,16 +7,16 @@
 
 ---
 
-:fire: Note this is still an experimental build. Use with caution.
+:construction_worker: Note this is still an experimental build. Use with caution.
 
 ---
 
 ## Features
 
-- Scan and auto import components
-- Multiple paths with customizable prefixes and lookup/ignore patterns
-- Hot reloading Support
-- Fully tested!
+- :mage: Automatically import components as you need them
+- :wrench: Easily customisable to your project
+- :fire: Hot Module Reloading Supported
+- :triangular_ruler: TypeScript'd & Unit tested
 
 ## Setup
 
