@@ -26,7 +26,7 @@ export default async function loader (this : loader.LoaderContext, source: strin
     return source
   }
 
-  const extensions = ['vue', 'js']
+  const extensions = ['vue', 'js', 'ts']
 
   const scannedComponents = await scanComponents([
     {

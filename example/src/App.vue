@@ -3,6 +3,8 @@
   <HelloWorld msg="Welcome to Your Vue.js App"/>
   <TestNestedComponent/>
   <PugComponent/>
+  <javascript-component/>
+  <TypeScriptComponent/>
 </template>
 
 <script>
