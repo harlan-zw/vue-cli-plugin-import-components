@@ -19,7 +19,7 @@ export default async function loader (this : loader.LoaderContext, source: strin
 
   const options = getOptions(loaderContext) as unknown as PluginOptions;
 
-  const tags = options.extractor.call(this) as Array<string>
+  const tags = options.extractor.call(this, options) as Array<string>
 
   // we only need to match the tags if we have some
   if (!tags || tags.length <= 0) {

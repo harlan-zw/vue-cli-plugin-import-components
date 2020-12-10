@@ -18,7 +18,7 @@
 - :mage: Automatically import components as you need them 
 - :wrench: Easily customisable to your project
 - :fire: Hot Module Reloading Supported
-- :triangular_ruler: Written for stability with typescript and unit tests
+- :triangular_ruler: Written in Typescript
 
 ## Setup
 

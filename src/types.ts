@@ -3,9 +3,10 @@ import { ProjectOptions } from "@vue/cli-service"
 export interface PluginOptions {
   path: string
   extractor: any
+  vueVersion: number
+  compiler: any
   extensions?: Array<string>
-  pattern?: string
-  ignore?: string
+  filter?: (path : string) => boolean
 }
 
 export interface VueCliPluginComponentsOptions extends ProjectOptions {

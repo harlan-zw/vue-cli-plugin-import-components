@@ -7,15 +7,18 @@ import {PluginOptions} from "../types";
 export default function extractTagsFromSfc (this : loader.LoaderContext, options : PluginOptions) : Array<string> | undefined {
 
   // parse the SFC component and get a descriptor
-  const sfcDescriptor = parseSfc.call(this)
+  const sfcDescriptor = parseSfc.call(this, options.compiler)
+
+  console.log('descriptor', sfcDescriptor)
 
   // compile the template content from the descriptor
-  const compiled = compileTemplateFromDescriptor.call(this, sfcDescriptor)
+  const compiled = compileTemplateFromDescriptor.call(this, sfcDescriptor, options.compiler)
 
-  if (compiled && compiled.ast) {
-    let tags = compiled.ast.components
+  console.log('compiled', compiled)
+
+  if (compiled && compiled.tags) {
     // return all unique tags as kebab case
-    return uniq(map(tags, tag => kebabCase(tag)))
+    return uniq(map(compiled.tags, tag => kebabCase(tag)))
   }
 
   return

@@ -1,16 +1,27 @@
-const { compilerOptions } = require('./tsconfig.json')
-
-module.exports = {
-  rootDir: __dirname,
+const config = {
+  preset: 'ts-jest',
+  testTimeout: 30000,
   testEnvironment: 'node',
+  testPathIgnorePatterns: ['<rootDir>/dist/', '<rootDir>/node_modules/', '<rootDir>/inspo/'],
   transform: {
     '^.+\\.(ts|js)$': 'ts-jest',
   },
-  coveragePathIgnorePatterns: ['.*\\.spec\\.ts'],
-  globals: {
-    'ts-jest': {
-      packageJson: '<rootDir>/package.json',
+}
+
+if (process.env.WEBPACK5) {
+  module.exports = {
+    ...config,
+
+    globals: {
+      'ts-jest': {
+        diagnostics: false,
+      },
     },
-    __DEV__: false,
-  },
+    moduleNameMapper: {
+      '^webpack$': 'webpack5',
+      '^webpack/(.*)': 'webpack5/$1',
+    },
+  }
+} else {
+  module.exports = config
 }

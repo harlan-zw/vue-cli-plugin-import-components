@@ -1,13 +1,10 @@
 import { loader } from 'webpack'
-import {
-  compileTemplate,
-  SFCDescriptor, SFCTemplateCompileOptions, SFCTemplateCompileResults,
-} from '@vue/compiler-sfc'
 
 export default function compileTemplateFromDescriptor (
   this : loader.LoaderContext,
-  sfcDescriptor: SFCDescriptor
-) : SFCTemplateCompileResults | undefined {
+  sfcDescriptor: any,
+  compiler: any
+) {
 
   // check we have a template to work with
   if (!sfcDescriptor?.template?.content) {
@@ -22,14 +19,15 @@ export default function compileTemplateFromDescriptor (
     content = pug.render(content, { filename: this.resourcePath })
   }
 
-  const shortFilePath = this.resourcePath
-    .replace(/^(\.\.[\/\\])+/, '')
-    .replace(/\\/g, '/')
+  const tags : String[] = []
 
-  return compileTemplate({
-    id: shortFilePath,
-    source: content,
-    filename: this.resourcePath,
-    prettify: false,
-  } as unknown as SFCTemplateCompileOptions)
+  let compiled = compiler.compile(content, {
+    modules: [{
+      postTransformNode: (node : any) => {
+        tags.push(node.tag)
+      }
+    }]
+  })
+  compiled.tags = tags
+  return compiled
 }
