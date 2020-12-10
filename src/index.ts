@@ -1,4 +1,4 @@
-import { ServicePlugin, PluginAPI } from "@vue/cli-service/types"
+import { ServicePlugin, PluginAPI } from '@vue/cli-service'
 import { VueCliPluginComponentsOptions, PluginOptions } from './types'
 import * as vue3 from './vue3'
 import * as vue2 from './vue2'

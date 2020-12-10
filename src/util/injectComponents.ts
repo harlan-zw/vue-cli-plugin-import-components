@@ -1,4 +1,4 @@
-import {Component} from "../types";
+import { Component } from '../types'
 
 export function injectComponents (source : string, components : Component[]) {
 
