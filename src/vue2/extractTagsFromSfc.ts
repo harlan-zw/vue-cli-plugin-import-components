@@ -2,7 +2,7 @@ import { loader } from 'webpack'
 import parseSfc from './parseSfc'
 import compileTemplateFromDescriptor from './compileTemplateFromDescriptor'
 import { uniq, map, kebabCase } from 'lodash'
-import {PluginOptions} from "../types";
+import { PluginOptions } from '../types'
 
 export default function extractTagsFromSfc (this : loader.LoaderContext, options : PluginOptions) : Array<string> | undefined {
 
