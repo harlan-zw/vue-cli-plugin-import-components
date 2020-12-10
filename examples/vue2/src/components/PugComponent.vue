@@ -1,5 +1,4 @@
 <template lang="pug">
-.test
-  h2 It's all working d
-  TestNestedComponent
+div
+  h3 Hi from pug, all good ✅
 </template>
