@@ -1,4 +1,4 @@
-![](https://laravel-og.beyondco.de/Components.png?theme=light&packageManager=yarn+add&packageName=vue-cli-plugin-components&pattern=texture&style=style_1&description=Automatically+import+components+in+your+Vue+CLI+app.&md=1&showWatermark=0&fontSize=100px&images=collection)
+![](https://laravel-og.beyondco.de/Components.png?theme=light&packageManager=vue+add&packageName=components&pattern=texture&style=style_1&description=Automatically+import+components+in+your+Vue+CLI+app.&md=1&showWatermark=0&fontSize=100px&images=collection)
 
 <h2 align='center'><samp>vue-cli-plugin-components</samp></h2>
 
@@ -23,7 +23,7 @@
 Install using Vue CLI
 
 ```bash
-vue add vue-cli-plugin-components
+vue add components
 ```
 
 ## Usage
