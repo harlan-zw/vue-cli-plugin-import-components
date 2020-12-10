@@ -1,4 +1,4 @@
-![](https://laravel-og.beyondco.de/Components.png?theme=light&packageManager=yarn+add&packageName=%40loonpwn%2Fvue-cli-plugin-components&pattern=texture&style=style_1&description=Automatically+import+components+in+your+Vue+CLI+app.&md=1&showWatermark=0&fontSize=100px&images=collection)
+![](https://laravel-og.beyondco.de/Components.png?theme=light&packageManager=yarn+add&packageName=vue-cli-plugin-components&pattern=texture&style=style_1&description=Automatically+import+components+in+your+Vue+CLI+app.&md=1&showWatermark=0&fontSize=100px&images=collection)
 
 <h2 align='center'><samp>vue-cli-plugin-components</samp></h2>
 
@@ -23,7 +23,7 @@
 Install using Vue CLI
 
 ```bash
-vue add @loonpwn/vue-cli-plugin-component
+vue add vue-cli-plugin-components
 ```
 
 ## Usage
@@ -40,8 +40,10 @@ Access your components with either pascal and kebab-case naming.
 
 ```html
 <template>
+<div>
   <ComponentFoo />
   <component-bar />
+</div>
 </template>
 ```
 

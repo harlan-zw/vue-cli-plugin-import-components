@@ -1,4 +1,3 @@
 <template lang="pug">
-h2 It's all working d
-TestNestedComponent
+h3 Hi from pug, all good ✅
 </template>
