@@ -1,7 +1,7 @@
 {
   "name": "@loonpwn/vue-cli-plugin-components",
   "version": "0.1.0",
-  "description": "Automatically import all of your components in Vue-CLI Vue 3 app",
+  "description": "Automatically import components in your Vue CLI app",
   "main": "index.js",
   "types": "dist",
   "repository": {
@@ -39,7 +39,7 @@
     "@types/debug": "^4.1.5",
     "@types/loader-utils": "^2.0.1",
     "@types/lodash": "^4.14.165",
-    "@types/node": "*",
+    "@types/node": "14.14.11",
     "@types/webpack": "^4.4.30",
     "@vue/cli-service": "^4.5.9",
     "@vue/cli-shared-utils": "^4.5.9",
@@ -53,7 +53,7 @@
     "typescript": "^4.1.2"
   },
   "optionalDependencies": {
-    "vue-template-compiler": "*",
-    "@vue/compiler-sfc": "*"
+    "@vue/compiler-sfc": "*",
+    "vue-template-compiler": "*"
   }
 }
