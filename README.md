@@ -2,14 +2,12 @@
 
 <h2 align='center'><samp>vue-cli-plugin-components</samp></h2>
 
-<p align='center'>A Vue CLI Plugin to automagically import your components.</p>
+<p align='center'>A Vue CLI Plugin to automagically import your components for Vue 2 and 3.</p>
 
 
 ---
 
 :construction_worker: Note this is still an experimental build. Use with caution.
-
-**Note:** The package only works with Vue 3 for now.
 
 ---
 

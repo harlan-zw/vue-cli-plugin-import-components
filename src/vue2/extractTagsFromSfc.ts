@@ -9,12 +9,8 @@ export default function extractTagsFromSfc (this : loader.LoaderContext, options
   // parse the SFC component and get a descriptor
   const sfcDescriptor = parseSfc.call(this, options.compiler)
 
-  console.log('descriptor', sfcDescriptor)
-
   // compile the template content from the descriptor
   const compiled = compileTemplateFromDescriptor.call(this, sfcDescriptor, options.compiler)
-
-  console.log('compiled', compiled)
 
   if (compiled && compiled.tags) {
     // return all unique tags as kebab case

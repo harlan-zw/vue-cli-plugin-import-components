@@ -5,12 +5,8 @@ import * as vue2 from './vue2'
 const { semver, loadModule } = require('@vue/cli-shared-utils')
 
 function loadVue2TemplateCompiler (api : PluginAPI) {
-  try {
-    return loadModule('vue-template-compiler', api.service.context)
-      || loadModule('vue-template-compiler', __dirname)
-  } catch (e) {
-    console.log(e)
-  }
+  return loadModule('vue-template-compiler', api.service.context)
+    || loadModule('vue-template-compiler', __dirname)
 }
 
 const plugin : ServicePlugin = (api: PluginAPI, options: VueCliPluginComponentsOptions) => {
