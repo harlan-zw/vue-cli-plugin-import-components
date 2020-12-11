@@ -78,9 +78,6 @@
     cssnano-preset-default "^4.0.0"
     postcss "^7.0.0"
 
-"@loonpwn/vue-cli-plugin-components@../":
-  version "0.1.0"
-
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -6802,6 +6799,11 @@ void-elements@^3.1.0:
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-3.1.0.tgz#614f7fbf8d801f0bb5f0661f5b2f5785750e4f09"
   integrity sha1-YU9/v42AHwu18GYfWy9XhXUOTwk=
 
+vue-cli-plugin-components@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/vue-cli-plugin-components/-/vue-cli-plugin-components-0.0.0.tgz#e4d68bbf982b27758311d841b9e017f54b24dd0f"
+  integrity sha512-n/6lGPcjDdOC/sPqR8b6zqkSn0UHU+a05gkAOwVvlhadfNdg4OhehVjhiqsFtIhOoM8GC3rpL1j7zuybDoTOPA==
+
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
@@ -6861,8 +6863,10 @@ watchpack@^1.7.4:
   resolved "https://registry.yarnpkg.com/watchpack/-/watchpack-1.7.5.tgz#1267e6c55e0b9b5be44c2023aed5437a2c26c453"
   integrity sha512-9P3MWk6SrKjHsGkLT2KHXdQ/9SNkyoJbabxnKOoJepsvJjJG8uYTR3yTPxPQvNDI3w4Nz1xnE0TLHK4RIVe/MQ==
   dependencies:
+    chokidar "^3.4.1"
     graceful-fs "^4.1.2"
     neo-async "^2.5.0"
+    watchpack-chokidar2 "^2.0.1"
   optionalDependencies:
     chokidar "^3.4.1"
     watchpack-chokidar2 "^2.0.1"

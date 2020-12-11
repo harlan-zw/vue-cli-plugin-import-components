@@ -7,10 +7,10 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "@loonpwn/vue-cli-plugin-components": "../../",
     "pug": "^3.0.0",
     "pug-plain-loader": "^1.0.0",
-    "vue": "^3.0.0"
+    "vue": "^3.0.0",
+    "vue-cli-plugin-components": "^0.0.0"
   },
   "devDependencies": {
     "@vue/cli-service": "~4.5.0",
