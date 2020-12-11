@@ -3,7 +3,6 @@
     "release": true
   },
   "npm": {
-    "publishPath": "dist",
     "tag": "beta"
   }
 }
