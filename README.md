@@ -1,4 +1,4 @@
-![](https://laravel-og.beyondco.de/Import+Components.png?theme=light&packageManager=vue+add&packageName=import+components&pattern=texture&style=style_1&description=Automatically+import+components+in+your+Vue+CLI+app.&md=1&showWatermark=0&fontSize=100px&images=collection)
+![](https://laravel-og.beyondco.de/Import%20Components.png?theme=light&packageManager=vue+add&packageName=import+components&pattern=texture&style=style_1&description=Automatically+import+components+in+your+Vue+CLI+app.&md=1&showWatermark=0&fontSize=100px&images=collection)
 
 <h2 align='center'><samp>vue-cli-plugin-import-components</samp></h2>
 
