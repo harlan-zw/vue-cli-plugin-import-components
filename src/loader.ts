@@ -26,12 +26,12 @@ export default async function loader (this : loader.LoaderContext, source: strin
     return source
   }
 
-  const extensions = ['vue', 'js', 'ts']
+  const extensions = options.extensions ||  ['vue']
 
   const scannedComponents = await scanComponents([
     {
       path: options.path,
-      extensions: extensions,
+      extensions,
       pattern: `**/*.{${extensions.join(',')},}`,
       ignore: [
         '**/*.stories.js', // ignore storybook files

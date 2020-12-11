@@ -20,7 +20,7 @@
 
 ## Setup
 
-Install using Vue CLI
+Install using Vue CLI. (Vue CLI 4+ is recommended)
 
 ```bash
 vue add components

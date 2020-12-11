@@ -10,20 +10,12 @@ function sortDirsByPathLength ({ path: pathA }: ScanDir, { path: pathB }: ScanDi
   return pathB.split(/[\\/]/).filter(Boolean).length - pathA.split(/[\\/]/).filter(Boolean).length
 }
 
-function prefixComponent (prefix: string = '', { pascalName, kebabName, ...rest }: Component): Component {
-  return {
-    pascalName: pascalName.startsWith(prefix) ? pascalName : pascalCase(prefix) + pascalName,
-    kebabName: kebabName.startsWith(prefix) ? kebabName : kebabCase(prefix) + '-' + kebabName,
-    ...rest
-  }
-}
-
 export async function scanComponents (dirs: ScanDir[], srcDir: string): Promise<Component[]> {
   const components: Component[] = []
   const filePaths = new Set<string>()
   const scannedPaths: string[] = []
 
-  for (const { path, pattern, ignore = [], prefix } of dirs.sort(sortDirsByPathLength)) {
+  for (const { path, pattern, ignore = [] } of dirs.sort(sortDirsByPathLength)) {
     const resolvedNames = new Map<string, string>()
 
     for (const _file of await globby(pattern!, { cwd: path, ignore })) {
@@ -56,30 +48,19 @@ export async function scanComponents (dirs: ScanDir[], srcDir: string): Promise<
       const pascalName = pascalCase(fileName)
       const kebabName = kebabCase(fileName)
       const shortPath = filePath.replace(srcDir, '@')
-      let chunkName = shortPath.replace(extname(shortPath), '')
 
       // istanbul ignore if
       if (isWindows) {
         filePath = filePath.replace(/\\/g, '\\\\')
-        chunkName = chunkName.replace('/', '_')
       }
 
-      let _c = prefixComponent(prefix, {
+
+      let component : Component = {
         filePath,
         pascalName,
         kebabName,
-        chunkName,
         shortPath,
-        import: '',
-        asyncImport: '',
-        export: 'default',
-      })
-
-      const _import = _c.import || `import ${pascalName} from "${_c.shortPath}";`
-
-      const component = {
-        ..._c,
-        import: _import
+        import: `import ${pascalName} from "${shortPath}";`,
       }
 
       components.push(component)

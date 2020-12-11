@@ -15,6 +15,7 @@ const plugin : ServicePlugin = (api: PluginAPI, options: VueCliPluginComponentsO
     //default configuration
     {
       path: api.resolve('./src/components'),
+      extensions: ['vue', 'js', 'ts']
     },
     // users provided configuration
     options.pluginOptions?.components
