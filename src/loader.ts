@@ -3,7 +3,7 @@ import { getOptions } from 'loader-utils';
 import { matcher, scanComponents } from './util/scanComponents'
 import { injectComponents } from './util/injectComponents'
 import { PluginOptions, Component } from './types'
-import {resolve} from "path";
+import { resolve } from 'path'
 
 export default async function loader (this : loader.LoaderContext, source: string) {
 
@@ -38,7 +38,6 @@ export default async function loader (this : loader.LoaderContext, source: strin
   if (components.length <= 0) {
     return source
   }
-
 
   return injectComponents(source, components)
 }

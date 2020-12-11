@@ -2,7 +2,13 @@ import { ServicePlugin, PluginAPI } from '@vue/cli-service'
 import { VueCliPluginComponentsOptions, PluginOptions, TagExtractor } from './types'
 import * as vue3 from './vue3'
 import * as vue2 from './vue2'
-const { semver, loadModule } = require('@vue/cli-shared-utils')
+import { existsSync, mkdirSync } from 'fs'
+const {
+  semver,
+  loadModule,
+  error,
+  info
+} = require('@vue/cli-shared-utils')
 
 function loadVue2TemplateCompiler (api : PluginAPI) {
   return loadModule('vue-template-compiler', api.service.context)
@@ -26,9 +32,20 @@ const plugin : ServicePlugin = (api: PluginAPI, options: VueCliPluginComponentsO
     options.pluginOptions?.components
   ) as PluginOptions
 
-  const vue = loadModule('vue', api.service.context) || loadModule('vue', __dirname)
+  // resolve the configured path
+  pluginOptions.path = api.resolve(pluginOptions.path)
 
+  // check the components path exists
+  if (!existsSync(pluginOptions.path)) {
+    // if not we should create it so we don't error out
+    mkdirSync(pluginOptions.path)
+    // warn the user, possible misconfiguration?
+    info('The components path "' +  pluginOptions.path + '" was created.', 'vue-cli-plugin-components')
+  }
+
+  const vue = loadModule('vue', api.service.context) || loadModule('vue', __dirname)
   if (!vue) {
+    error('Aborting, failed to load vue module.', 'vue-cli-plugin-components')
     return
   }
 
@@ -40,6 +57,9 @@ const plugin : ServicePlugin = (api: PluginAPI, options: VueCliPluginComponentsO
     pluginOptions.compiler = loadVue2TemplateCompiler(api)
   } else if (vueVersion === 3) {
     pluginOptions.extractor = vue3.extractTagsFromSfc as TagExtractor
+  } else {
+    error('Aborting, vue version ' + vueVersion + ' not supported', 'vue-cli-plugin-components')
+    return
   }
 
   // extend the base webpack configuration
