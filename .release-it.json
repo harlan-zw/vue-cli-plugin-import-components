@@ -1,6 +1,9 @@
 {
   "github": {
-    "release": true,
-    "assets": ["dist/**"]
+    "release": true
+  },
+  "npm": {
+    "publishPath": "dist",
+    "tag": "beta"
   }
 }
