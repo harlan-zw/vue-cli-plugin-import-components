@@ -1,5 +1,5 @@
 import { ServicePlugin, PluginAPI } from '@vue/cli-service'
-import { VueCliPluginComponentsOptions, PluginOptions } from './types'
+import { VueCliPluginComponentsOptions, PluginOptions, TagExtractor } from './types'
 import * as vue3 from './vue3'
 import * as vue2 from './vue2'
 const { semver, loadModule } = require('@vue/cli-shared-utils')
@@ -11,11 +11,16 @@ function loadVue2TemplateCompiler (api : PluginAPI) {
 
 const plugin : ServicePlugin = (api: PluginAPI, options: VueCliPluginComponentsOptions) => {
 
-  const resolvedOptions = Object.assign(
+  const extensions =  ['vue', 'js', 'ts']
+  const pluginOptions = Object.assign(
     //default configuration
     {
-      path: api.resolve('./src/components'),
-      extensions: ['vue', 'js', 'ts']
+      path: './src/components',
+      pattern: `**/*.{${extensions.join(',')},}`,
+      extensions,
+      ignore: [
+        '**/*.stories.js', // ignore storybook files
+      ],
     },
     // users provided configuration
     options.pluginOptions?.components
@@ -28,13 +33,13 @@ const plugin : ServicePlugin = (api: PluginAPI, options: VueCliPluginComponentsO
   }
 
   const vueVersion = semver.major(vue.version)
-  resolvedOptions.vueVersion = vueVersion
+  pluginOptions.vueVersion = vueVersion
 
   if (vueVersion === 2) {
-    resolvedOptions.extractor = vue2.extractTagsFromSfc
-    resolvedOptions.compiler = loadVue2TemplateCompiler(api)
+    pluginOptions.extractor = vue2.extractTagsFromSfc as TagExtractor
+    pluginOptions.compiler = loadVue2TemplateCompiler(api)
   } else if (vueVersion === 3) {
-    resolvedOptions.extractor = vue3.extractTagsFromSfc
+    pluginOptions.extractor = vue3.extractTagsFromSfc as TagExtractor
   }
 
   // extend the base webpack configuration
@@ -46,7 +51,7 @@ const plugin : ServicePlugin = (api: PluginAPI, options: VueCliPluginComponentsO
       // add our custom components loader before the vue-loader
       .use('components')
       .loader(require.resolve('./loader'))
-      .options(resolvedOptions)
+      .options(pluginOptions)
       .before('vue-loader')
       .end()
 

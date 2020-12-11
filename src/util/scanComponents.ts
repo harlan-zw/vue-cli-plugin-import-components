@@ -1,74 +1,66 @@
 import { basename, extname, join, dirname, resolve } from 'path'
 import globby from 'globby'
-import {camelCase, kebabCase, upperFirst, first, filter} from 'lodash'
-import type { ScanDir, Component } from '../types'
+import { camelCase, kebabCase, upperFirst, first, filter } from 'lodash'
+import type { Component, PluginOptions } from '../types'
 
 const pascalCase = (str: string) => upperFirst(camelCase(str))
 const isWindows = process.platform.startsWith('win')
 
-function sortDirsByPathLength ({ path: pathA }: ScanDir, { path: pathB }: ScanDir): number {
-  return pathB.split(/[\\/]/).filter(Boolean).length - pathA.split(/[\\/]/).filter(Boolean).length
-}
-
-export async function scanComponents (dirs: ScanDir[], srcDir: string): Promise<Component[]> {
+export async function scanComponents (options : PluginOptions, srcDir: string): Promise<Component[]> {
   const components: Component[] = []
   const filePaths = new Set<string>()
   const scannedPaths: string[] = []
 
-  for (const { path, pattern, ignore = [] } of dirs.sort(sortDirsByPathLength)) {
-    const resolvedNames = new Map<string, string>()
+  const { path, pattern, ignore = [] } = options
 
-    for (const _file of await globby(pattern!, { cwd: path, ignore })) {
-      let filePath = resolve(join(path, _file))
+  const resolvedNames = new Map<string, string>()
 
-      if (scannedPaths.find(d => filePath.startsWith(d))) {
-        continue
-      }
+  for (const _file of await globby(pattern!, { cwd: path, ignore })) {
+    let filePath = resolve(join(path, _file))
 
-      if (filePaths.has(filePath)) {
-        continue
-      }
-      filePaths.add(filePath)
-
-      let fileName = basename(filePath, extname(filePath))
-      if (fileName === 'index') {
-        fileName = basename(dirname(filePath), extname(filePath))
-      }
-
-      if (resolvedNames.has(fileName)) {
-        // eslint-disable-next-line no-console
-        console.warn(`Two component files resolving to the same name \`${fileName}\`:\n` +
-          `\n - ${filePath}` +
-          `\n - ${resolvedNames.get(fileName)}`
-        )
-        continue
-      }
-      resolvedNames.set(fileName, filePath)
-
-      const pascalName = pascalCase(fileName)
-      const kebabName = kebabCase(fileName)
-      const shortPath = filePath.replace(srcDir, '@')
-
-      // istanbul ignore if
-      if (isWindows) {
-        filePath = filePath.replace(/\\/g, '\\\\')
-      }
-
-
-      let component : Component = {
-        filePath,
-        pascalName,
-        kebabName,
-        shortPath,
-        import: `import ${pascalName} from "${shortPath}";`,
-      }
-
-      components.push(component)
+    if (scannedPaths.find(d => filePath.startsWith(d))) {
+      continue
     }
 
-    scannedPaths.push(path)
+    if (filePaths.has(filePath)) {
+      continue
+    }
+    filePaths.add(filePath)
+
+    let fileName = basename(filePath, extname(filePath))
+    if (fileName === 'index') {
+      fileName = basename(dirname(filePath), extname(filePath))
+    }
+
+    if (resolvedNames.has(fileName)) {
+      // eslint-disable-next-line no-console
+      console.warn(`Two component files resolving to the same name \`${fileName}\`:\n` +
+        `\n - ${filePath}` +
+        `\n - ${resolvedNames.get(fileName)}`
+      )
+      continue
+    }
+    resolvedNames.set(fileName, filePath)
+
+    const pascalName = pascalCase(fileName)
+    const kebabName = kebabCase(fileName)
+    const shortPath = filePath.replace(srcDir, '@')
+
+    // istanbul ignore if
+    if (isWindows) {
+      filePath = filePath.replace(/\\/g, '\\\\')
+    }
+
+    components.push({
+      filePath,
+      pascalName,
+      kebabName,
+      shortPath,
+      import: `import ${pascalName} from "${shortPath}";`,
+    } as Component)
   }
 
+  scannedPaths.push(path)
   return components
 }
 

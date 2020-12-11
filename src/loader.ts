@@ -2,8 +2,8 @@ import { loader } from 'webpack';
 import { getOptions } from 'loader-utils';
 import { matcher, scanComponents } from './util/scanComponents'
 import { injectComponents } from './util/injectComponents'
-import { PluginOptions, Component, ScanDir } from './types'
-import { resolve } from 'path'
+import { PluginOptions, Component } from './types'
+import {resolve} from "path";
 
 export default async function loader (this : loader.LoaderContext, source: string) {
 
@@ -26,18 +26,7 @@ export default async function loader (this : loader.LoaderContext, source: strin
     return source
   }
 
-  const extensions = options.extensions ||  ['vue']
-
-  const scannedComponents = await scanComponents([
-    {
-      path: options.path,
-      extensions,
-      pattern: `**/*.{${extensions.join(',')},}`,
-      ignore: [
-        '**/*.stories.js', // ignore storybook files
-      ],
-    }
-  ] as ScanDir[], resolve('./src'))
+  const scannedComponents = await scanComponents(options, resolve('./src'))
 
   // make sure cache invalidation and recompile in watch mode
   scannedComponents.forEach(c => this.addDependency(c.filePath))

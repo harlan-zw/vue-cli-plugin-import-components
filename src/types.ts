@@ -1,12 +1,27 @@
 import { ProjectOptions } from '@vue/cli-service'
 
+export interface TagExtractor {
+  (options: PluginOptions) : Array<string>
+}
+
+export enum Extensions {
+  ts,
+  js,
+  vue
+}
+
 export interface PluginOptions {
+  // scan component options
   path: string
-  extractor: any
-  vueVersion: number
+  pattern: string
+  ignore: string[]
+  extensions: Extensions[]
+
+  extractor: TagExtractor
+
+  vueVersion: 2 | 3
   compiler: any
-  extensions?: Array<string>
-  filter?: (path : string) => boolean
+  filter?: (component : Component) => boolean
 }
 
 export interface VueCliPluginComponentsOptions extends ProjectOptions {
