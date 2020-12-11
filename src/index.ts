@@ -40,12 +40,12 @@ const plugin : ServicePlugin = (api: PluginAPI, options: VueCliPluginComponentsO
     // if not we should create it so we don't error out
     mkdirSync(pluginOptions.path)
     // warn the user, possible misconfiguration?
-    info('The components path "' +  pluginOptions.path + '" was created.', 'vue-cli-plugin-components')
+    info('The components path "' +  pluginOptions.path + '" was created.', 'vue-cli-plugin-import-components')
   }
 
   const vue = loadModule('vue', api.service.context) || loadModule('vue', __dirname)
   if (!vue) {
-    error('Aborting, failed to load vue module.', 'vue-cli-plugin-components')
+    error('Aborting, failed to load vue module.', 'vue-cli-plugin-import-components')
     return
   }
 
@@ -58,7 +58,7 @@ const plugin : ServicePlugin = (api: PluginAPI, options: VueCliPluginComponentsO
   } else if (vueVersion === 3) {
     pluginOptions.extractor = vue3.extractTagsFromSfc as TagExtractor
   } else {
-    error('Aborting, vue version ' + vueVersion + ' not supported', 'vue-cli-plugin-components')
+    error('Aborting, vue version ' + vueVersion + ' not supported', 'vue-cli-plugin-import-components')
     return
   }
 

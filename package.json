@@ -1,12 +1,12 @@
 {
-  "name": "vue-cli-plugin-components",
-  "version": "1.0.0",
+  "name": "vue-cli-plugin-import-components",
+  "version": "0.1.0",
   "description": "Automatically import components in your Vue CLI app",
   "main": "index.js",
   "types": "dist",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/loonpwn/vue-cli-plugin-components.git"
+    "url": "git+https://github.com/loonpwn/vue-cli-plugin-import-components.git"
   },
   "keywords": [
     "vue",
@@ -20,15 +20,15 @@
     "clean": "rimraf dist",
     "test": "jest --coverage",
     "dev": "nuxt-ts test/fixture",
-    "release": "yarn test && yarn build && standard-version && git push --follow-tags && npm publish",
+    "release": "dotenv release-it --",
     "lint": "prettier --write --parser typescript \"{src,test}/**/*.{j,t}s\""
   },
   "author": "Harlan Wilton",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/loonpwn/vue-cli-plugin-components/issues"
+    "url": "https://github.com/loonpwn/vue-cli-plugin-import-components/issues"
   },
-  "homepage": "https://github.com/loonpwn/vue-cli-plugin-components#readme",
+  "homepage": "https://github.com/loonpwn/vue-cli-plugin-import-components#readme",
   "publishConfig": {
     "access": "public"
   },
@@ -46,9 +46,11 @@
     "@vue/compiler-sfc": "^3.0.4",
     "bili": "^5.0.5",
     "chalk": "^4.1.0",
+    "dotenv-cli": "^4.0.0",
     "loader-utils": "^2.0.0",
     "lodash": "^4.17.20",
     "pug": "^3.0.0",
+    "release-it": "^14.2.2",
     "rollup-plugin-typescript2": "^0.29.0",
     "typescript": "^4.1.2"
   },

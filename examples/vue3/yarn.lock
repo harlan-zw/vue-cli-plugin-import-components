@@ -6799,9 +6799,9 @@ void-elements@^3.1.0:
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-3.1.0.tgz#614f7fbf8d801f0bb5f0661f5b2f5785750e4f09"
   integrity sha1-YU9/v42AHwu18GYfWy9XhXUOTwk=
 
-vue-cli-plugin-components@^0.0.0:
+vue-cli-plugin-import-components@^0.0.0:
   version "0.0.0"
-  resolved "https://registry.yarnpkg.com/vue-cli-plugin-components/-/vue-cli-plugin-components-0.0.0.tgz#e4d68bbf982b27758311d841b9e017f54b24dd0f"
+  resolved "https://registry.yarnpkg.com/vue-cli-plugin-import-components/-/vue-cli-plugin-import-components-0.0.0.tgz#e4d68bbf982b27758311d841b9e017f54b24dd0f"
   integrity sha512-n/6lGPcjDdOC/sPqR8b6zqkSn0UHU+a05gkAOwVvlhadfNdg4OhehVjhiqsFtIhOoM8GC3rpL1j7zuybDoTOPA==
 
 vue-hot-reload-api@^2.3.0:

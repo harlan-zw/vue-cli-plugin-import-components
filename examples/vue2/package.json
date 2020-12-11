@@ -7,7 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "@loonpwn/vue-cli-plugin-components": "../../",
+    "vue-cli-plugin-import-components": "../../",
     "vue": "^2.6.11"
   },
   "devDependencies": {

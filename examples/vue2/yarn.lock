@@ -78,7 +78,7 @@
     cssnano-preset-default "^4.0.0"
     postcss "^7.0.0"
 
-"@loonpwn/vue-cli-plugin-components@../../":
+"@loonpwn/vue-cli-plugin-import-components@../../":
   version "0.1.0"
   optionalDependencies:
     "@vue/compiler-sfc" "^3.0.4"

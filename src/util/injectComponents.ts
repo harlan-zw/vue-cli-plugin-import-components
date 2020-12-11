@@ -3,7 +3,7 @@ import { Component } from '../types'
 export function injectComponents (source : string, components : Component[]) {
 
   const newContent =
-    `/* vue-cli-plugin-components */\n` +
+    `/* vue-cli-plugin-import-components */\n` +
     components.map(c => c.import).join('\n') + '\n' +
     `script.components = Object.assign({}, { ${components.map(c => c.pascalName).join(', ')} }, script.components);`
 

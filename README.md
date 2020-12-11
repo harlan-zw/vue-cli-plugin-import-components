@@ -1,6 +1,6 @@
 ![](https://laravel-og.beyondco.de/Components.png?theme=light&packageManager=vue+add&packageName=components&pattern=texture&style=style_1&description=Automatically+import+components+in+your+Vue+CLI+app.&md=1&showWatermark=0&fontSize=100px&images=collection)
 
-<h2 align='center'><samp>vue-cli-plugin-components</samp></h2>
+<h2 align='center'><samp>vue-cli-plugin-import-components</samp></h2>
 
 <p align='center'>Automatically import components in your Vue CLI app, supporting Vue 2 and 3.</p>
 
