@@ -11,17 +11,17 @@ export enum Extensions {
 }
 
 export interface PluginOptions {
-  // scan component options
+  // user options
   path: string
   pattern: string
   ignore: string[]
   extensions: Extensions[]
+  mapComponent?: (component : Component) => Component | false
 
+  // hidden options
   extractor: TagExtractor
-
   vueVersion: 2 | 3
   compiler: any
-  filter?: (component : Component) => boolean
 }
 
 export interface VueCliPluginComponentsOptions extends ProjectOptions {

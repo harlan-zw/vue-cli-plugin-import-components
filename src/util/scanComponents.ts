@@ -51,13 +51,25 @@ export async function scanComponents (options : PluginOptions, srcDir: string): 
       filePath = filePath.replace(/\\/g, '\\\\')
     }
 
-    components.push({
+    let component = {
       filePath,
       pascalName,
       kebabName,
       shortPath,
-      import: `import ${pascalName} from "${shortPath}";`,
-    } as Component)
+    } as Component
+
+    let resolvedComponent = component as Component | false
+    // allow someone to configure the component mapping
+    if (options.mapComponent) {
+      resolvedComponent = options.mapComponent(component)
+    }
+
+    // if a component was resolved as false, then we shouldn't push it
+    if (resolvedComponent) {
+      // resolve the import variable in case the user wanted to modify paths or the casing
+      resolvedComponent.import = `import ${pascalName} from "${shortPath}";`
+      components.push(resolvedComponent)
+    }
   }
 
   scannedPaths.push(path)

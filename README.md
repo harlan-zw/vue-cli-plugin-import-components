@@ -68,40 +68,59 @@ module.exports = {
 
 ### Options
 
-#### path
+All options are optional.
 
-The path used for scanning to find components.
+#### path - String
 
-Default: `~/components`
+The path used for scanning to find components. Note: It should be relative to your project root. 
 
-#### extensions
+Default: `./src/components`
 
-Default: `['.js', '.vue', '.ts']`
+#### pattern - String
 
-#### filter
+Regex to find the files within the `path`. Note: If you omit the pattern it will use the configured `extensions`
+
+Default: `**/*.{${extensions.join(',')},}`
+
+#### ignore - String[]
+
+Regex to ignore files within the `path`. 
+
+Default: `[ '**/*.stories.js' ],`
+
+#### mapComponent - (component : Component) => Component | false
 
 A function which you can use to filter out paths you don't want to be scanned.
+
+For example, if we wanted to access our auto components only when a user prefixes them with auto, you could use the below code.
 
 ```js
 // vue.config.js
 module.exports = {
   pluginOptions: {
     components: {
-      filter (path) {
-        return path.match(/regex/)
+      // prefix all automatically imported components with an auto prefix
+      mapComponent (component) {
+        component.pascalCase = 'Auto' + upperFirst(component.pascalCase)
+        component.kebabName = 'auto-' + component.pascalCase
+        return component
       }
     }
   }
 }
 ```
 
+#### extensions - String[]
+
+When scanning the path for components, which files should be considered components.
+
+Default: `['.js', '.vue', '.ts']`
 
 ### Limitations
 
 **Static Imports Only**
 
-Only components that are statically defined within your template will work. If you are a dynamic template you will still
-need to manually import.
+Only components that are statically defined within your template will work.
 
 ```vue
 <template>
@@ -111,7 +130,8 @@ need to manually import.
 
 **Using folders as namespaces**
 
-It is assumed you are using the Vue conventions for naming your components. The below would not work.
+It is assumed you are using the Vue conventions for naming your components. The below would not work without manually mapping
+the components.
 
 ```bash
 | components/

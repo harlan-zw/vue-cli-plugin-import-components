@@ -22,7 +22,6 @@ const plugin : ServicePlugin = (api: PluginAPI, options: VueCliPluginComponentsO
     //default configuration
     {
       path: './src/components',
-      pattern: `**/*.{${extensions.join(',')},}`,
       extensions,
       ignore: [
         '**/*.stories.js', // ignore storybook files
@@ -31,6 +30,10 @@ const plugin : ServicePlugin = (api: PluginAPI, options: VueCliPluginComponentsO
     // users provided configuration
     options.pluginOptions?.components
   ) as PluginOptions
+
+  if (!pluginOptions.pattern) {
+    pluginOptions.pattern = `**/*.{${pluginOptions.extensions.join(',')},}`
+  }
 
   // resolve the configured path
   pluginOptions.path = api.resolve(pluginOptions.path)
