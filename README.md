@@ -92,7 +92,7 @@ Default: `[ '**/*.stories.js' ],`
 
 A function which you can use to filter out paths you don't want to be scanned.
 
-For example, if we wanted to access our auto components only when a user prefixes them with auto, you could use the below code.
+For example, if we wanted to access your automatically components only when they're prefixed them with `auto`, you could use the below code.
 
 ```js
 // vue.config.js
