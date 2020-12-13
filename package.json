@@ -12,7 +12,8 @@
     "/dist",
     "/README.md",
     "/index.js",
-    "/package.json"
+    "/package.json",
+    "/generator"
   ],
   "keywords": [
     "vue",
