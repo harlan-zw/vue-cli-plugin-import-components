@@ -7,7 +7,7 @@
 
 ---
 
-:warning:  Note: `vue-cli-plugin-import-components` is only available in beta for now. Use with caution.
+:warning: Package is only available in beta for now. Use with caution.
 
 ---
 
