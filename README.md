@@ -7,16 +7,16 @@
 
 ---
 
-:construction_worker: Note this is still an experimental build. Use with caution.
+:warning:  Note: `vue-cli-plugin-import-components` is only available in beta for now. Use with caution.
 
 ---
 
 ## Features
 
 - :mage: Automatically import components as you need them
-- :wrench: Easily customisable to your project
+- :wrench: Easily customise to your project
 - :fire: Hot Module Reloading Supported
-- :triangular_ruler: Written in Typescript
+- :triangular_ruler: Written in Typescript with Vue 2 and 3 compilation
 
 ## Setup
 
@@ -28,7 +28,7 @@ vue add import-components
 
 ## Usage
 
-Add components to your `components/` folder and use them in any `.vue` file straight away.
+Add components to your `components/` folder.
 
 ```bash
 | components/
@@ -36,7 +36,7 @@ Add components to your `components/` folder and use them in any `.vue` file stra
 ---| ComponentBar.vue
 ```
 
-Access your components with either pascal and kebab-case naming.
+Use them in any `.vue` as you would normally. Access your components with either PascalCase or kebab-case.
 
 ```html
 <template>
@@ -47,8 +47,7 @@ Access your components with either pascal and kebab-case naming.
 </template>
 ```
 
-Remove manual component `imports` from the `script` section. Remove the `components` section
-from your script file.
+Remove `imports` and `components` from the `script` section.
 
 
 ## Configuration
