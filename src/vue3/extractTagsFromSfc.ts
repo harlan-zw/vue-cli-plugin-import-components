@@ -8,10 +8,10 @@ import { SFCTemplateCompileResults } from '@vue/compiler-sfc'
 export default function extractTagsFromSfc (this : loader.LoaderContext, options : PluginOptions) : Array<string> | undefined {
 
   // parse the SFC component and get a descriptor
-  const sfcDescriptor = parseSfc.call(this)
+  const sfcDescriptor = parseSfc.call(this, options.compiler)
 
   // compile the template content from the descriptor
-  const compiled = compileTemplateFromDescriptor.call(this, sfcDescriptor) as SFCTemplateCompileResults
+  const compiled = compileTemplateFromDescriptor.call(this, sfcDescriptor, options.compiler) as SFCTemplateCompileResults
 
   if (compiled && compiled.ast) {
     let tags = compiled.ast.components

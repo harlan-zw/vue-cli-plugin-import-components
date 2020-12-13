@@ -1,12 +1,12 @@
 import { loader } from 'webpack'
 import {
-  compileTemplate,
   SFCDescriptor, SFCTemplateCompileOptions, SFCTemplateCompileResults,
 } from '@vue/compiler-sfc'
 
 export default function compileTemplateFromDescriptor (
   this : loader.LoaderContext,
-  sfcDescriptor: SFCDescriptor
+  sfcDescriptor: SFCDescriptor,
+  compiler: any
 ) : SFCTemplateCompileResults | undefined {
 
   // check we have a template to work with
@@ -26,7 +26,7 @@ export default function compileTemplateFromDescriptor (
     .replace(/^(\.\.[\/\\])+/, '')
     .replace(/\\/g, '/')
 
-  return compileTemplate({
+  return compiler.compileTemplate({
     id: shortFilePath,
     source: content,
     filename: this.resourcePath,

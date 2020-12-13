@@ -15,6 +15,11 @@ function loadVue2TemplateCompiler (api : PluginAPI) {
     || loadModule('vue-template-compiler', __dirname)
 }
 
+function loadVue3Compiler (api : PluginAPI) {
+  return loadModule('@vue/compiler-sfc', api.service.context)
+    || loadModule('@vue/compiler-sfc', __dirname)
+}
+
 const plugin : ServicePlugin = (api: PluginAPI, options: VueCliPluginComponentsOptions) => {
 
   const extensions =  ['vue', 'js', 'ts']
@@ -60,6 +65,7 @@ const plugin : ServicePlugin = (api: PluginAPI, options: VueCliPluginComponentsO
     pluginOptions.compiler = loadVue2TemplateCompiler(api)
   } else if (vueVersion === 3) {
     pluginOptions.extractor = vue3.extractTagsFromSfc as TagExtractor
+    pluginOptions.compiler = loadVue3Compiler(api)
   } else {
     error('Aborting, vue version ' + vueVersion + ' not supported', 'vue-cli-plugin-import-components')
     return
