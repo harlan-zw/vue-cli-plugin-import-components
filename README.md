@@ -8,9 +8,10 @@
 ## Why?
 
 Manually importing components for Vue out of the box isn't that painful. Whether you import from a central `index.js` or from a relative or absolute paths, 
-both work well. However, once your project grows, manually importing components soon becomes frustrating trying to remember where components are and a blocker for refactoring. 
+both work well. However, once your project grows, manually importing components soon becomes frustrating. Trying to remember
+where components are and refactoring now takes extra time and effort. 
 
-This package removes that frustration by scanning all your components and injecting the imports for them as the components are used, at build time.
+This package removes the frustration by scanning all your components and injecting the imports for them as the components are used, at build time.
 
 The Vue CLI ecosystem was missing this functionality, other frameworks already have it: [Vuetify](https://github.com/vuetifyjs/vuetify), [Nuxt.js](https://github.com/nuxt/components), 
 [Vite](https://github.com/antfu/vite-plugin-components), [Chakra](https://github.com/segunadebayo/chakra-ui), etc.
