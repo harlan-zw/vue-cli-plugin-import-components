@@ -36,7 +36,7 @@ vue add import-components
 
 ---
 
-:warning: Package is in beta, please report any issues you find.
+:warning: Package is in beta, please [report issues](https://github.com/loonpwn/vue-cli-plugin-import-components/issues) you find.
 
 ---
 
