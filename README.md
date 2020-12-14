@@ -2,7 +2,7 @@
 
 <h2 align='center'><samp>vue-cli-plugin-import-components</samp></h2>
 
-<p align='center'>Automatically import components in your Vue CLI app, supporting Vue 2 and 3.</p>
+<p align='center'>Automatically import components in your Vue CLI app with tree shaking, supporting Vue 2 and 3.</p>
 
 
 ## Why?
