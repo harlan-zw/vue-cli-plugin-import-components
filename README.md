@@ -5,12 +5,6 @@
 <p align='center'>Automatically import components in your Vue CLI app, supporting Vue 2 and 3.</p>
 
 
----
-
-:warning: Package is only available in beta for now. Use with caution.
-
----
-
 ## Why?
 
 Manually importing components for Vue out of the box isn't that painful. Whether you import from a central `index.js` or from a relative or absolute paths, 
@@ -36,6 +30,12 @@ Install using Vue CLI. (Vue CLI 4+ is recommended)
 ```bash
 vue add import-components
 ```
+
+---
+
+:warning: Package is in beta, please report any issues you find.
+
+---
 
 ## Usage
 
