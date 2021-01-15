@@ -27,10 +27,6 @@ vue add import-components
 
 ---
 
-:warning: Package is in beta, please [report issues](https://github.com/loonpwn/vue-cli-plugin-import-components/issues) you find.
-
----
-
 ## Usage
 
 Add components to your `components/` folder.
