@@ -3,7 +3,7 @@ import { getOptions } from 'loader-utils';
 import { matcher, scanComponents } from './util/scanComponents'
 import { injectComponents } from './util/injectComponents'
 import { PluginOptions, Component } from './types'
-import { resolve } from 'path'
+import { resolve } from 'upath'
 
 export default async function loader (this : loader.LoaderContext, source: string) {
 
