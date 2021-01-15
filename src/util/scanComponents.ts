@@ -1,4 +1,4 @@
-import { basename, extname, join, dirname, resolve } from 'path'
+import { basename, extname, join, dirname, resolve } from 'upath'
 import globby from 'globby'
 import { camelCase, kebabCase, upperFirst, first, filter } from 'lodash'
 import type { Component, PluginOptions } from '../types'

@@ -1,6 +1,6 @@
 import { loader } from 'webpack'
 import { readFileSync } from 'fs'
-import { basename, dirname, relative } from 'path'
+import { basename, dirname, relative } from 'upath'
 
 export default function parseSfc (this : loader.LoaderContext, compiler: any) {
     const filename = basename(this.resourcePath)
