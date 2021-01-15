@@ -1,6 +1,6 @@
 {
   "name": "vue-cli-plugin-import-components",
-  "version": "1.0.0-3",
+  "version": "1.0.0",
   "description": "Automatically import components in your Vue CLI app",
   "main": "index.js",
   "types": "dist",
