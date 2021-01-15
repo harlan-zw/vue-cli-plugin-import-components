@@ -4,7 +4,6 @@ import { camelCase, kebabCase, upperFirst, first, filter } from 'lodash'
 import type { Component, PluginOptions } from '../types'
 
 const pascalCase = (str: string) => upperFirst(camelCase(str))
-const isWindows = process.platform.startsWith('win')
 
 export async function scanComponents (options : PluginOptions, srcDir: string): Promise<Component[]> {
   const components: Component[] = []
@@ -45,11 +44,6 @@ export async function scanComponents (options : PluginOptions, srcDir: string): 
     const pascalName = pascalCase(fileName)
     const kebabName = kebabCase(fileName)
     const shortPath = filePath.replace(srcDir, '@')
-
-    // istanbul ignore if
-    if (isWindows) {
-      filePath = filePath.replace(/\\/g, '\\\\')
-    }
 
     let component = {
       filePath,
