@@ -79,9 +79,3 @@
   margin-top: 60px;
 }
 </style>
-<script>
-import SetupComponent from "@/ui/SetupComponent";
-export default {
-  components: { SetupComponent }
-}
-</script>
