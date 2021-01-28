@@ -57,6 +57,15 @@
       </td>
     </tr>
 
+    <tr>
+      <td>
+        <code>SetupComponent.vue</code>
+      </td>
+      <td>
+        <SetupComponent/>
+      </td>
+    </tr>
+
   </table>
 </template>
 
@@ -70,3 +79,9 @@
   margin-top: 60px;
 }
 </style>
+<script>
+import SetupComponent from "@/ui/SetupComponent";
+export default {
+  components: { SetupComponent }
+}
+</script>
