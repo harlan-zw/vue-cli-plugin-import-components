@@ -1,11 +1,21 @@
 import { Component } from '../types'
 
+
+function injectImports(variable : string, components : Component[]) {
+
+  return variable + `.components = Object.assign({}, { ${components.map(c => c.pascalName).join(', ')} }, ` + variable + `.components);`
+}
+
+
 export function injectComponents (source : string, components : Component[]) {
 
-  const newContent =
+  let newContent =
     `/* vue-cli-plugin-import-components */\n` +
     components.map(c => c.import).join('\n') + '\n' +
-    `script.components = Object.assign({}, { ${components.map(c => c.pascalName).join(', ')} }, script.components);`
+    injectImports('script', components);
+
+  // script.options is used by vue-property-decorator
+  newContent += `if (script.options) { ` + injectImports('script.options', components) + `}` 
 
   const hotReload = source.indexOf('/* hot reload */')
   if (hotReload > -1) {
