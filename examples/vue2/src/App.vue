@@ -81,6 +81,14 @@
         <SplitComponent/>
       </td>
     </tr>
+    <tr>
+      <td>
+        <code>PropertyDecoratorComponent.vue</code>
+      </td>
+      <td>
+        <PropertyDecoratorComponent/>
+      </td>
+    </tr>
   </table>
 </div>
 </template>
