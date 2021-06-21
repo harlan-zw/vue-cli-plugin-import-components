@@ -10,9 +10,13 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "stripInternal": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "resolveJsonModule": true,
+    "types": [
+      "@types/node",
+    ]
   },
   "include": [
-    "src"
+    "src",
   ]
 }

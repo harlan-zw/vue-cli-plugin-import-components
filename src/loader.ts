@@ -2,7 +2,6 @@ import { loader as webpackLoader } from 'webpack'
 import { getOptions } from 'loader-utils'
 import { resolve } from 'upath'
 import { matcher, scanComponents } from './util/scanComponents'
-import { injectComponents } from './util/injectComponents'
 import { PluginOptions, Component } from './types'
 
 export default async function loader(this: webpackLoader.LoaderContext, source: string) {
@@ -33,5 +32,5 @@ export default async function loader(this: webpackLoader.LoaderContext, source: 
   if (components.length <= 0)
     return source
 
-  return injectComponents(source, components)
+  return options.injector.call(this, source, components)
 }

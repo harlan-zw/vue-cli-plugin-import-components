@@ -60,10 +60,12 @@ const plugin: ServicePlugin = (api: PluginAPI, options: VueCliPluginComponentsOp
 
   if (vueVersion === 2) {
     pluginOptions.extractor = vue2.extractTagsFromSfc as TagExtractor
+    pluginOptions.injector = vue2.injectComponents
     pluginOptions.compiler = loadVue2TemplateCompiler(api)
   }
   else if (vueVersion === 3) {
     pluginOptions.extractor = vue3.extractTagsFromSfc as TagExtractor
+    pluginOptions.injector = vue3.injectComponents
     pluginOptions.compiler = loadVue3Compiler(api)
   }
   else {
@@ -87,6 +89,11 @@ const plugin: ServicePlugin = (api: PluginAPI, options: VueCliPluginComponentsOp
 
   // need to return something for typescript
   return true
+}
+
+export {
+  VueCliPluginComponentsOptions,
+  PluginOptions,
 }
 
 export default plugin

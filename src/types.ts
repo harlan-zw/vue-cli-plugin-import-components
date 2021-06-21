@@ -29,6 +29,7 @@ export interface PluginOptions {
 
   // hidden options
   extractor: TagExtractor
+  injector: any
   vueVersion: 2 | 3
   compiler: any
 }

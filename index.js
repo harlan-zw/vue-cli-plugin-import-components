@@ -1,3 +1,3 @@
-var loader = require('./dist');
+var plugin = require('./dist');
 
-module.exports = loader;
+module.exports = plugin;

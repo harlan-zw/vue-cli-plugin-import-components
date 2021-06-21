@@ -4,7 +4,7 @@ function injectImports(variable: string, components: Component[]) {
   return `${variable}.components = Object.assign({}, { ${components.map(c => c.pascalName).join(', ')} }, ${variable}.components);`
 }
 
-export function injectComponents(source: string, components: Component[]) {
+export default function injectComponents(source: string, components: Component[]) {
   let newContent
     = `/* vue-cli-plugin-import-components */\n${
       components.map(c => c.import).join('\n')}\n${
