@@ -9,6 +9,7 @@
   "dependencies": {
     "pug": "^3.0.0",
     "pug-plain-loader": "^1.0.0",
+    "vee-validate": "^3.4.10",
     "vue": "^3.0.0",
     "vue-cli-plugin-import-components": "../../"
   },

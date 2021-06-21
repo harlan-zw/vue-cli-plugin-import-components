@@ -89,15 +89,25 @@
         <PropertyDecoratorComponent/>
       </td>
     </tr>
+    <tr>
+      <td>
+        <code>Nested Global Component</code>
+      </td>
+      <td>
+        <ValidationObserver>
+          <FiltersForm>
+            This should work
+          </FiltersForm>
+        </ValidationObserver>
+      </td>
+    </tr>
   </table>
 </div>
 </template>
 
 <script>
-import SplitComponent from "@/components/SplitComponent";
 export default {
   name: 'App',
-  components: { SplitComponent },
 }
 </script>
 
