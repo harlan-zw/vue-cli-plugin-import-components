@@ -57,6 +57,15 @@
       </td>
     </tr>
 
+    <tr>
+      <td>
+        <code>SetupComponent.vue</code>
+      </td>
+      <td>
+        <SetupComponent/>
+      </td>
+    </tr>
+
   </table>
 </template>
 
