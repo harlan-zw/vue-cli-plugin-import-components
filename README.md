@@ -13,7 +13,7 @@ Checkout my [article](https://harlanzw.com/blog/vue-automatic-component-imports/
 ## Features
 
 - :mage: Vue 2 and 3 support with full tree shaking
-- :wrench: Easily customise to your project
+- :zap: Lazy load your components
 - :fire: Hot Module Reloading ready
 - :triangular_ruler: Written in Typescript
 
