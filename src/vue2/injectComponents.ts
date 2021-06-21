@@ -10,8 +10,8 @@ export default function injectComponents(this: webpackLoader.LoaderContext, sour
   const injectScript
     = `/* vue-cli-plugin-import-components */
 ${installComponentRuntime}
-${components.map(c => c.import).join('\n')}
-vueCliInstallComponent(component, {${components.map(c => c.pascalName).join(', ')}});`
+${components.filter(c => !c.lazy).map(c => c.import).join('\n')}
+vueCliInstallComponent(component, {${components.map(c => c.lazy ? c.import : c.pascalName).join(', ')}});`
 
   const hotReload = source.indexOf('/* hot reload */')
   if (hotReload > -1)

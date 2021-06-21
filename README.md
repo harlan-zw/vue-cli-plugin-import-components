@@ -51,6 +51,22 @@ Use them in any `.vue` as you would normally. Access your components with either
 Remove `imports` and `components` from the `script` section.
 
 
+### Async Component Loading
+
+You can load your components async by prefixing your component name with `Lazy` or `lazy-`, depending on your
+syntax. 
+
+```html
+<template>
+<div>
+  <!-- ComponentFoo will be loaded in async -->
+  <LazyComponentFoo />
+  <!-- ComponentBar will be loaded sync -->
+  <ComponentBar />
+</div>
+</template>
+```
+
 ## Configuration
 
 You can change the behaviour of the plugin by modifying the options in `./vue.config.js`. 

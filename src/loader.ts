@@ -25,8 +25,24 @@ export default async function loader(this: webpackLoader.LoaderContext, source: 
   // make sure cache invalidation and recompile in watch mode
   scannedComponents.forEach(c => this.addDependency(c.filePath))
 
+  const generateLazyLoadImport = (c: Component) => {
+    if (options.vueVersion === 3)
+      return `Lazy${c.pascalName}: defineAsyncComponent(() => import('${c.shortPath.replace(';', '')}'))`
+
+    return `Lazy${c.pascalName}: () => import('${c.shortPath.replace(';', '')}')`
+  }
+
+  const componentsWithLazyImports = scannedComponents.map(c => [c, {
+    ...c,
+    pascalName: `Lazy${c.pascalName}`,
+    import: generateLazyLoadImport(c),
+    kebabName: `lazy-${c.kebabName}`,
+    lazy: true,
+  } as Component])
+    .flat()
+
   // the components to import
-  const components: Component[] = matcher(tags, scannedComponents)
+  const components: Component[] = matcher(tags, componentsWithLazyImports)
 
   // only if we have components to inject
   if (components.length <= 0)

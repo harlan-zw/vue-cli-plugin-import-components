@@ -111,6 +111,14 @@
             <v-btn>Test</v-btn>
           </td>
         </tr>
+        <tr>
+          <td>
+            <code>Lazy Component</code>
+          </td>
+          <td>
+            <lazy-lazy-component>Test</lazy-lazy-component>
+          </td>
+        </tr>
       </table>
     </v-main>
   </v-app>
@@ -118,14 +126,9 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
 
 export default {
   name: 'App',
-
-  components: {
-    HelloWorld,
-  },
 
   data: () => ({
     //

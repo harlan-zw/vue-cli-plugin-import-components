@@ -6,6 +6,7 @@ export interface Component {
   import: string
   filePath: string
   shortPath: string
+  lazy: boolean | undefined
 }
 
 export enum Extensions {
