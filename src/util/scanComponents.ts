@@ -84,5 +84,6 @@ export function matcher(tags: string[], componentsToMatch: Component[]) {
     if (component)
       components.push(component)
   })
-  return components
+
+  return components.sort((a, b) => a.import < b.import ? -1 : (a.import > b.import ? 1 : 0))
 }
