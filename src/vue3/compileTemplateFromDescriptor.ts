@@ -3,16 +3,14 @@ import {
   SFCDescriptor, SFCTemplateCompileOptions, SFCTemplateCompileResults,
 } from '@vue/compiler-sfc'
 
-export default function compileTemplateFromDescriptor (
-  this : loader.LoaderContext,
+export default function compileTemplateFromDescriptor(
+  this: loader.LoaderContext,
   sfcDescriptor: SFCDescriptor,
-  compiler: any
-) : SFCTemplateCompileResults | undefined {
-
+  compiler: any,
+): SFCTemplateCompileResults | undefined {
   // check we have a template to work with
-  if (!sfcDescriptor?.template?.content) {
+  if (!sfcDescriptor?.template?.content)
     return
-  }
 
   let content = sfcDescriptor.template.content
 

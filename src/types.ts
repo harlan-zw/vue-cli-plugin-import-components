@@ -1,7 +1,11 @@
 import { ProjectOptions } from '@vue/cli-service'
 
-export interface TagExtractor {
-  (options: PluginOptions) : Array<string>
+export interface Component {
+  pascalName: string
+  kebabName: string
+  import: string
+  filePath: string
+  shortPath: string
 }
 
 export enum Extensions {
@@ -10,13 +14,18 @@ export enum Extensions {
   vue
 }
 
+export interface TagExtractor {
+  // eslint-disable-next-line no-use-before-define
+  (options: PluginOptions): Array<string> | false
+}
+
 export interface PluginOptions {
   // user options
   path: string
   pattern: string
   ignore: string[]
   extensions: Extensions[]
-  mapComponent?: (component : Component) => Component | false
+  mapComponent?: (component: Component) => Component | false
 
   // hidden options
   extractor: TagExtractor
@@ -35,13 +44,4 @@ export interface ScanDir {
   pattern?: string | string[]
   ignore?: string[]
   extensions: string[]
-}
-
-
-export interface Component {
-  pascalName: string
-  kebabName: string
-  import: string
-  filePath: string
-  shortPath: string
 }

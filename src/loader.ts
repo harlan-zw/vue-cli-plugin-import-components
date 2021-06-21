@@ -1,30 +1,25 @@
-import { loader } from 'webpack';
-import { getOptions } from 'loader-utils';
+import { loader as webpackLoader } from 'webpack'
+import { getOptions } from 'loader-utils'
+import { resolve } from 'upath'
 import { matcher, scanComponents } from './util/scanComponents'
 import { injectComponents } from './util/injectComponents'
 import { PluginOptions, Component } from './types'
-import { resolve } from 'upath'
 
-export default async function loader (this : loader.LoaderContext, source: string) {
-
+export default async function loader(this: webpackLoader.LoaderContext, source: string) {
   this.cacheable()
-
-  const loaderContext : loader.LoaderContext = this
 
   // bail out if we're dealing with a resource with a query
   // we only want to be dealing with the 'virtual-module' of the SFC
-  if (loaderContext.resourceQuery) {
+  if (this.resourceQuery)
     return source
-  }
 
-  const options = getOptions(loaderContext) as unknown as PluginOptions;
+  const options = getOptions(this) as unknown as PluginOptions
 
-  const tags = options.extractor.call(this, options) as Array<string>
+  const tags = options.extractor.call(this, options)
 
   // we only need to match the tags if we have some
-  if (!tags || tags.length <= 0) {
+  if (!tags || tags.length <= 0)
     return source
-  }
 
   const scannedComponents = await scanComponents(options, resolve('./src'))
 
@@ -32,13 +27,11 @@ export default async function loader (this : loader.LoaderContext, source: strin
   scannedComponents.forEach(c => this.addDependency(c.filePath))
 
   // the components to import
-  const components : Component[] = matcher(tags, scannedComponents)
+  const components: Component[] = matcher(tags, scannedComponents)
 
   // only if we have components to inject
-  if (components.length <= 0) {
+  if (components.length <= 0)
     return source
-  }
 
   return injectComponents(source, components)
 }
-
