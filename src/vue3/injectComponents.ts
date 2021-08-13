@@ -13,7 +13,7 @@ export default function injectComponents(source: string, components: Component[]
       injectImports('script', components)}`
 
   // script.options is used by vue-property-decorator
-  newContent += `if (script.options) { ${injectImports('script.options', components)}}`
+  newContent += `if ('__vccOpts' in script) { script.__o = script.__o || {}; ${injectImports('script.__o', components)}}`
 
   const hotReload = source.indexOf('/* hot reload */')
   if (hotReload > -1)

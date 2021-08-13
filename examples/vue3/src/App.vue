@@ -68,6 +68,15 @@
 
     <tr>
       <td>
+        <code>PropertyDecoratorComponent.vue</code>
+      </td>
+      <td>
+        <PropertyDecoratorComponent/>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
         <code>Nested Global Component</code>
       </td>
       <td>
