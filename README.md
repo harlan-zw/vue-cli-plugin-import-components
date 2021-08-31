@@ -4,11 +4,11 @@
 
 <p align='center'>Automatically import components in your Vue CLI app with tree shaking, supporting Vue 2 and 3.</p>
 
-
 ## Why and How?
 
 Checkout my [article](https://harlanzw.com/blog/vue-automatic-component-imports/) about why this feature exists, how it works and the issues.
 
+<b>ℹ️ Need something more powerful? Consider using [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) </b>
 
 ## Features
 
