@@ -66,9 +66,38 @@
       </td>
     </tr>
 
+    <tr>
+      <td>
+        <code>PropertyDecoratorComponent.vue</code>
+      </td>
+      <td>
+        <PropertyDecoratorComponent/>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <code>Nested Global Component</code>
+      </td>
+      <td>
+        <ValidationObserver>
+          <FiltersForm>
+            This should work
+          </FiltersForm>
+        </ValidationObserver>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>Lazy Component</code>
+      </td>
+      <td>
+        <lazy-lazy-component>Test</lazy-lazy-component>
+      </td>
+    </tr>
+
   </table>
 </template>
-
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

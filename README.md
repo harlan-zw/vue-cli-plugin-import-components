@@ -13,7 +13,7 @@ Checkout my [article](https://harlanzw.com/blog/vue-automatic-component-imports/
 ## Features
 
 - :mage: Vue 2 and 3 support with full tree shaking
-- :wrench: Easily customise to your project
+- :zap: Lazy load your components
 - :fire: Hot Module Reloading ready
 - :triangular_ruler: Written in Typescript
 
@@ -50,6 +50,22 @@ Use them in any `.vue` as you would normally. Access your components with either
 
 Remove `imports` and `components` from the `script` section.
 
+
+### Async Component Loading
+
+You can load your components async by prefixing your component name with `Lazy` or `lazy-`, depending on your
+syntax. 
+
+```html
+<template>
+<div>
+  <!-- ComponentFoo will be loaded in async -->
+  <LazyComponentFoo />
+  <!-- ComponentBar will be loaded sync -->
+  <ComponentBar />
+</div>
+</template>
+```
 
 ## Configuration
 

@@ -1,15 +1,13 @@
 import { loader } from 'webpack'
 
-export default function compileTemplateFromDescriptor (
-  this : loader.LoaderContext,
+export default function compileTemplateFromDescriptor(
+  this: loader.LoaderContext,
   sfcDescriptor: any,
-  compiler: any
+  compiler: any,
 ) {
-
   // check we have a template to work with
-  if (!sfcDescriptor?.template?.content) {
+  if (!sfcDescriptor?.template?.content)
     return
-  }
 
   let content = sfcDescriptor.template.content
 
@@ -19,14 +17,14 @@ export default function compileTemplateFromDescriptor (
     content = pug.render(content, { filename: this.resourcePath })
   }
 
-  const tags : String[] = []
+  const tags: String[] = []
 
-  let compiled = compiler.compile(content, {
+  const compiled = compiler.compile(content, {
     modules: [{
-      postTransformNode: (node : any) => {
+      postTransformNode: (node: any) => {
         tags.push(node.tag)
-      }
-    }]
+      },
+    }],
   })
   compiled.tags = tags
   return compiled

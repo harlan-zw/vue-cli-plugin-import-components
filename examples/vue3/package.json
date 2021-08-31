@@ -9,8 +9,11 @@
   "dependencies": {
     "pug": "^3.0.0",
     "pug-plain-loader": "^1.0.0",
+    "vee-validate": "^3.4.10",
     "vue": "^3.0.0",
-    "vue-cli-plugin-import-components": "../../"
+    "vue-class-component": "8.0.0-rc.1",
+    "vue-cli-plugin-import-components": "../../",
+    "vue-property-decorator": "10.0.0-rc.3"
   },
   "devDependencies": {
     "@vue/cli-service": "~4.5.0",

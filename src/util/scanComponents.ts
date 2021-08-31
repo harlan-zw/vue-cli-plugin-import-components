@@ -5,7 +5,7 @@ import type { Component, PluginOptions } from '../types'
 
 const pascalCase = (str: string) => upperFirst(camelCase(str))
 
-export async function scanComponents (options : PluginOptions, srcDir: string): Promise<Component[]> {
+export async function scanComponents(options: PluginOptions, srcDir: string): Promise<Component[]> {
   const components: Component[] = []
   const filePaths = new Set<string>()
   const scannedPaths: string[] = []
@@ -15,27 +15,25 @@ export async function scanComponents (options : PluginOptions, srcDir: string): 
   const resolvedNames = new Map<string, string>()
 
   for (const _file of await globby(pattern!, { cwd: path, ignore })) {
-    let filePath = resolve(join(path, _file))
+    const filePath = resolve(join(path, _file))
 
-    if (scannedPaths.find(d => filePath.startsWith(d))) {
+    if (scannedPaths.find(d => filePath.startsWith(d)))
       continue
-    }
 
-    if (filePaths.has(filePath)) {
+    if (filePaths.has(filePath))
       continue
-    }
+
     filePaths.add(filePath)
 
     let fileName = basename(filePath, extname(filePath))
-    if (fileName === 'index') {
+    if (fileName === 'index')
       fileName = basename(dirname(filePath), extname(filePath))
-    }
 
     if (resolvedNames.has(fileName)) {
       // eslint-disable-next-line no-console
-      console.warn(`Two component files resolving to the same name \`${fileName}\`:\n` +
-        `\n - ${filePath}` +
-        `\n - ${resolvedNames.get(fileName)}`
+      console.warn(`Two component files resolving to the same name \`${fileName}\`:\n`
+        + `\n - ${filePath}`
+        + `\n - ${resolvedNames.get(fileName)}`,
       )
       continue
     }
@@ -45,7 +43,7 @@ export async function scanComponents (options : PluginOptions, srcDir: string): 
     const kebabName = kebabCase(fileName)
     const shortPath = filePath.replace(srcDir, '@')
 
-    let component = {
+    const component = {
       filePath,
       pascalName,
       kebabName,
@@ -54,9 +52,8 @@ export async function scanComponents (options : PluginOptions, srcDir: string): 
 
     let resolvedComponent = component as Component | false
     // allow someone to configure the component mapping
-    if (options.mapComponent) {
+    if (options.mapComponent)
       resolvedComponent = options.mapComponent(component)
-    }
 
     // if a component was resolved as false, then we shouldn't push it
     if (resolvedComponent) {
@@ -76,18 +73,17 @@ export async function scanComponents (options : PluginOptions, srcDir: string): 
  * @param tags An array of unique tags, should be unique for casing already
  * @param componentsToMatch Array of components from your project
  */
-export function matcher (tags: string[], componentsToMatch: Component[]) {
-
-  const components : Component[] = []
-  tags.forEach(tag => {
+export function matcher(tags: string[], componentsToMatch: Component[]) {
+  const components: Component[] = []
+  tags.forEach((tag) => {
     const component = first(
-      filter(componentsToMatch, (component : Component) => {
+      filter(componentsToMatch, (component: Component) => {
         return tag === component.pascalName || tag === component.kebabName
-      })
+      }),
     ) as Component | null
-    if (component) {
+    if (component)
       components.push(component)
-    }
   })
-  return components
+
+  return components.sort((a, b) => a.import < b.import ? -1 : (a.import > b.import ? 1 : 0))
 }
