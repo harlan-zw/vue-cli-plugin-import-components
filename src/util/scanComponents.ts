@@ -58,7 +58,7 @@ export async function scanComponents(options: PluginOptions, srcDir: string): Pr
     // if a component was resolved as false, then we shouldn't push it
     if (resolvedComponent) {
       // resolve the import variable in case the user wanted to modify paths or the casing
-      resolvedComponent.import = `import ${pascalName} from "${shortPath}";`
+      resolvedComponent.import = `import ${resolvedComponent.pascalName} from "${resolvedComponent.shortPath}";`
       components.push(resolvedComponent)
     }
   }
