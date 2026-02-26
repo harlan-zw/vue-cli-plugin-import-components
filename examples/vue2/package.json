@@ -14,7 +14,7 @@
     "vue-cli-plugin-import-components": "../../",
     "vue-cli-plugin-vuetify": "~2.4.1",
     "vue-property-decorator": "^9.1.2",
-    "vuetify": "^2.4.0"
+    "vuetify": "^3.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -23,7 +23,7 @@
     "pug-plain-loader": "^1.1.0",
     "sass": "~1.32.0",
     "sass-loader": "^10.0.0",
-    "vue-template-compiler": "^2.6.11",
+    "vue-template-compiler": "^2.7.16",
     "vuetify-loader": "^1.7.0"
   },
   "browserslist": [
